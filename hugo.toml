@@ -1,0 +1,5 @@
+baseURL = 'https://fishythursdays.com/'
+languageCode = 'en-gb'
+title = 'Fishy Thursdays'
+
+disableKinds = ['taxonomy', 'term', 'RSS', 'sitemap']
