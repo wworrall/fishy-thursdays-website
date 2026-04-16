@@ -19,7 +19,7 @@
 
     <div class="wheel-stage">
       <svg class="wheel" viewBox="-320 -320 640 640" aria-label="Pub picker wheel" role="img">
-        {{ $pubs := hugo.Data.pubs.pubs }}
+        {{ $pubs := .Site.Data.pubs.pubs }}
         {{ $count := len $pubs }}
 
         {{ $sliceDeg := div 360.0 $count }}
@@ -132,7 +132,7 @@
       <p class="result" id="result" aria-live="polite"></p>
     </div>
 
-    {{ $flow := hugo.Data.flow }}
+    {{ $flow := .Site.Data.flow }}
     <div class="emoji-flow" aria-hidden="true">
       <div class="flow-row">
         <div class="flow-track flow-track-left">
@@ -159,7 +159,7 @@
 
   <script>
     window.FISHY_PUBS = [
-      {{- range $i, $pub := hugo.Data.pubs.pubs -}}
+      {{- range $i, $pub := .Site.Data.pubs.pubs -}}
         {{ if $i }},{{ end }}{{ $pub | jsonify }}
       {{- end -}}
     ];
